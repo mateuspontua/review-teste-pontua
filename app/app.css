@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+/*
+ * ⚠️ TODO - TAREFA 3: Implementar estilização
+ *
+ * Complete os estilos abaixo para os componentes do projeto.
+ * Você pode usar Tailwind classes nos componentes OU adicionar CSS customizado aqui.
+ *
+ * Classes que precisam de estilização:
+ * - .app-container, .app-header, .nav-container, .nav-links, .nav-link
+ * - .products-container, .products-grid
+ * - .product-card, .product-name, .product-price, .product-description,
+ *   .product-category, .product-stock, .add-to-cart-button
+ * - .home-container, .hero-section, .info-section, .info-card
+ * - .error-message, .error-container
+ */
+
+/* Layout principal */
+.app-container {
+  /* TODO: Adicionar estilos do container principal */
+}
+
+.app-header {
+  /* TODO: Adicionar estilos do header */
+}
+
+.nav-container {
+  /* TODO: Adicionar estilos da navegação */
+}
+
+.nav-links {
+  /* TODO: Adicionar estilos dos links de navegação */
+}
+
+.nav-link {
+  /* TODO: Adicionar estilos individuais dos links */
+}
+
+.main-content {
+  /* TODO: Adicionar estilos do conteúdo principal */
+}
+
+.app-footer {
+  /* TODO: Adicionar estilos do footer */
+}
+
+/* Página Home */
+.home-container {
+  /* TODO: Adicionar estilos do container da home */
+}
+
+.hero-section {
+  /* TODO: Adicionar estilos da seção hero */
+}
+
+.hero-title {
+  /* TODO: Adicionar estilos do título hero */
+}
+
+.hero-description {
+  /* TODO: Adicionar estilos da descrição */
+}
+
+.cta-button {
+  /* TODO: Adicionar estilos do botão CTA */
+}
+
+.info-section {
+  /* TODO: Adicionar estilos da seção de informações */
+}
+
+.info-card {
+  /* TODO: Adicionar estilos dos cards de informação */
+}
+
+/* Página de Produtos */
+.products-container {
+  /* TODO: Adicionar estilos do container de produtos */
+}
+
+.products-grid {
+  /* TODO: Adicionar grid responsivo (use CSS Grid ou Flexbox) */
+  /* Sugestão: 3 colunas em desktop, 2 em tablet, 1 em mobile */
+}
+
+/* Product Card */
+.product-card {
+  /* TODO: Adicionar estilos do card de produto */
+  /* Pense em: border, padding, shadow, border-radius, hover effects */
+}
+
+.product-name {
+  /* TODO: Adicionar estilos do nome do produto */
+}
+
+.product-price {
+  /* TODO: Adicionar estilos do preço (destaque) */
+}
+
+.product-description {
+  /* TODO: Adicionar estilos da descrição */
+}
+
+.product-category {
+  /* TODO: Adicionar estilos da categoria (badge/tag style) */
+}
+
+.product-stock {
+  /* TODO: Adicionar estilos do status de estoque */
+  /* Considere diferentes estilos para em estoque vs fora de estoque */
+}
+
+.add-to-cart-button {
+  /* TODO: Adicionar estilos do botão */
+  /* Pense em estados: normal, hover, active, disabled */
+}
+
+/* Mensagens de erro */
+.error-message {
+  /* TODO: Adicionar estilos para mensagens de erro */
+}
+
+.error-container {
+  /* TODO: Adicionar estilos para container de erro */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* TODO: Adicionar ajustes para mobile/tablet */
+}
+
+@media (max-width: 480px) {
+  /* TODO: Adicionar ajustes para mobile pequeno */
+}
