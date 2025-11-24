@@ -19,7 +19,7 @@ describe('Products tests', () => {
   it('validate test', () => {
     expect(1 + 1).toBe(2)
   })
-  it('verificar se está renderizando o ProductCard corretamente', () => {
+  it('should render ProductCard correctly', () => {
     const mockProduct = mockProducts[0];
     
     const { getByText } = render(<ProductCard {...mockProduct} />)
@@ -33,7 +33,7 @@ describe('Products tests', () => {
       expect(getByText('Adicionar ao Carrinho')).toBeInTheDocument();
     }
   })
-  it('verificar se o preço está formatado corretamente', () => {
+  it('should format price correctly', () => {
     const mockProduct = mockProducts[0];
     
     const { getByTestId } = render(<ProductCard {...mockProduct} />)
