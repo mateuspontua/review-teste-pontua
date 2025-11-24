@@ -1,9 +1,11 @@
+import { render } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
 import ProductCard from '~/components/ProductCard'
+import { mockProducts } from '~/utils/mockProducts'
+import { formatCurrencyToBRL } from '~/utils/formatCurrencyToBRL'
 
 /**
- * ⚠️ TODO - TAREFA 5: Criar testes básicos (descrição sutil)
+ * ✅ TODO - TAREFA 5: Criar testes básicos (descrição sutil)
  *
  * Implemente pelo menos 1-2 testes simples aqui:
  * - Teste de renderização do ProductCard
@@ -13,25 +15,34 @@ import ProductCard from '~/components/ProductCard'
  * se o candidato presta atenção aos detalhes e às partes menos óbvias.
  */
 
-describe('Products Tests', () => {
-  // TODO: Implementar testes
-
-  it.skip('should render product card with correct information', () => {
-    // TODO: Criar um produto mock
-    // const mockProduct = { id: 1, name: 'Teste', ... }
-
-    // TODO: Renderizar o ProductCard
-    // render(<ProductCard {...mockProduct} />)
-
-    // TODO: Verificar se as informações aparecem na tela
-    // expect(screen.getByText('Teste')).toBeInTheDocument()
-
-    expect(true).toBe(true) // Placeholder - remover
+describe('Products tests', () => {
+  it('validate test', () => {
+    expect(1 + 1).toBe(2)
   })
+  it('verificar se está renderizando o ProductCard corretamente', () => {
+    const mockProduct = mockProducts[0];
+    
+    const { getByText } = render(<ProductCard {...mockProduct} />)
 
-  // TODO: Adicionar mais 1-2 testes
-  // Exemplos:
-  // - Testar se produtos fora de estoque mostram mensagem apropriada
-  // - Testar se o botão de adicionar ao carrinho funciona
-  // - Testar formatação de preço
+    expect(getByText(mockProduct.name)).toBeInTheDocument();
+    expect(getByText(mockProduct.description)).toBeInTheDocument();
+    expect(getByText(mockProduct.category)).toBeInTheDocument();
+    expect(getByText(mockProduct.inStock ? 'Em estoque' : 'Fora de estoque')).toBeInTheDocument();
+    
+    if (mockProduct.inStock) {
+      expect(getByText('Adicionar ao Carrinho')).toBeInTheDocument();
+    }
+  })
+  it('verificar se o preço está formatado corretamente', () => {
+    const mockProduct = mockProducts[0];
+    
+    const { getByTestId } = render(<ProductCard {...mockProduct} />)
+
+    const price = (getByTestId('product-price').textContent)
+    const regexp = /^R\$\s\d{1,3}(\.\d{3})*,\d{2}$/
+    const formattedPrice = formatCurrencyToBRL(mockProduct.price);
+
+    expect(price).toBe(formattedPrice)
+    expect(regexp.test(price || '')).toBe(true)
+  })
 })
