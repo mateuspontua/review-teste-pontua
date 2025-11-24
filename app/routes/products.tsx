@@ -30,7 +30,7 @@ export default function Products() {
   if (data?.error) {
     return (
       <div aria-describedby="error-container-message" className="error-message">
-        <h2 aria-describedby="error-message-title" className="text-2xl text-red-600 font-semibold">Erro!</h2>
+        <h2 aria-describedby="error-message-title" className="text-2xl text-red-600 font-semibold">Erro ao carregar produtos</h2>
         <p aria-describedby="error-message-content">{data.error}</p>
       </div>
     );
