@@ -30,7 +30,7 @@ export default function Products() {
   if (data?.error) {
     return (
       <div className="error-message">
-        <h2>Erro ao carregar produtos</h2>
+        <h2 className="text-2xl text-red-600 font-semibold">Erro!</h2>
         <p>{data.error}</p>
       </div>
     );
@@ -41,18 +41,18 @@ export default function Products() {
   // TODO: Renderizar lista de produtos usando ProductCard
   // Dica: não esqueça de adicionar uma key apropriada
   return (
-    <main className="products-container">
-      <h1>Nossos Produtos</h1>
+    <main aria-describedby="list-of-products" className="products-container">
+      <h1 className="text-lg" aria-describedby="products-header-title">Nossos Produtos</h1>
 
       {/* TODO: Implementar renderização da lista aqui */}
       {hasProducts && (
-        <article className="products-grid">
+        <article aria-describedby="grid-of-products" className="products-grid">
           {data.products.map((product) => (
             <ProductCard {...product} key={product.id} />
           ))}
         </article>
       )}
-      {!hasProducts && <p>Nenhum produto disponível</p>}
+      {!hasProducts && <p aria-describedby="empty-products" className="text-xl text-red-400">Nenhum produto disponível</p>}
     </main>
   );
 }
