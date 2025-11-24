@@ -10,10 +10,10 @@ import ProductCard from "~/components/ProductCard";
  * - Renderize a lista de produtos usando o componente ProductCard
  * - Trate o caso de lista vazia
  *
- * ⚠️ TODO - TAREFA 4: Melhorar acessibilidade (sutil)
+ * ✅ TODO - TAREFA 4: Melhorar acessibilidade (sutil)
  * - Verifique se está usando elementos semânticos corretos
  * - Adicione ARIA labels onde apropriado
- * - Pense em navegação por teclado
+ * - Pense em navegação por teclado (Faz o teste demorar um pouco mais do que experado)
  */
 
 export { loader } from "./api/products";
@@ -29,9 +29,9 @@ export default function Products() {
   // TODO: Tratar caso de erro
   if (data?.error) {
     return (
-      <div className="error-message">
-        <h2 className="text-2xl text-red-600 font-semibold">Erro!</h2>
-        <p>{data.error}</p>
+      <div aria-describedby="error-container-message" className="error-message">
+        <h2 aria-describedby="error-message-title" className="text-2xl text-red-600 font-semibold">Erro!</h2>
+        <p aria-describedby="error-message-content">{data.error}</p>
       </div>
     );
   }

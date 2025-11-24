@@ -23,8 +23,10 @@ export async function loader({ request }: LoaderFunctionArgs) {
     }
     
   } catch (error) {
+    const message = error instanceof Error ? error.message : 'Algum erro inesperado ocorreu. Por favor, tente novamente mais tarde.';
+    
     return {
-      error: 'Erro ao buscar produtos',
+      error: message,
       products: []
     }
   }
