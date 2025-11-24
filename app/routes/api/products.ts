@@ -15,8 +15,17 @@ import { fetchProducts } from '~/services/api'
  */
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  // TODO: Implementar busca de dados aqui
-  // Dica: use fetchProducts() e adicione tratamento de erro
+  try {
+    const response = await fetchProducts();
 
-  return { products: [] }
+    return {
+      products: response
+    }
+    
+  } catch (error) {
+    return {
+      error: 'Erro ao buscar produtos',
+      products: []
+    }
+  }
 }
