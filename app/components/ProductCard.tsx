@@ -36,18 +36,18 @@ export default function ProductCard(props: ProductCardProps) {
       {/* Deve exibir: nome, preço, descrição, categoria, status de estoque */}
       <div className="flex flex-col">
         <div className="space-y-1 flex-1">
-          <h3 className="product-name" aria-describedby="product-name">{name}</h3>
+          <h3 className="product-name" data-testid="product-name" aria-describedby="product-name">{name}</h3>
           <p className="product-price" data-testid="product-price" aria-describedby="product-price">{formatCurrencyToBRL(price)}</p>
         </div>
-        <span className="product-category" aria-describedby="category-of-product">{category}</span>
+        <span className="product-category" data-testid="product-category" aria-describedby="category-of-product">{category}</span>
       </div>
       <div className="flex flex-1 flex-col items-end justify-start gap-1">
-        <p className="product-description" aria-describedby="product-description">{description}</p>
-        {inStock ? <strong className="product-stock" aria-describedby="in-stock">Em estoque</strong> : (
-          <span className="bg-red-600 text-white text-sm px-2 py-0.5 rounded-full" aria-describedby="out-stock">Fora de estoque</span>
+        <p className="product-description" data-testid="product-description" aria-describedby="product-description">{description}</p>
+        {inStock ? <strong className="product-stock" data-testid="product-stock" aria-describedby="in-stock">Em estoque</strong> : (
+          <span className="bg-red-600 text-white text-sm px-2 py-0.5 rounded-full" data-testid="product-out-stock" aria-describedby="out-stock">Fora de estoque</span>
         )}
         {inStock && (
-          <button aria-describedby="add-to-cart-btn" className="add-to-cart-button" onClick={handleAddToCart}>
+          <button aria-describedby="add-to-cart-btn" data-testid="product-add-to-cart-button" className="add-to-cart-button" onClick={handleAddToCart}>
             Adicionar ao Carrinho
           </button>
         )}

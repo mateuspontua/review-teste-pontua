@@ -29,9 +29,9 @@ export default function Products() {
   // TODO: Tratar caso de erro
   if (data?.error) {
     return (
-      <div aria-describedby="error-container-message" className="error-message">
-        <h2 aria-describedby="error-message-title" className="text-2xl text-red-600 font-semibold">Erro ao carregar produtos</h2>
-        <p aria-describedby="error-message-content">{data.error}</p>
+      <div aria-describedby="error-container-message" data-testid="error-container-message" className="error-message">
+        <h2 aria-describedby="error-message-title" data-testid="error-message-title" className="text-2xl text-red-600 font-semibold">Erro ao carregar produtos</h2>
+        <p aria-describedby="error-message-content" data-testid="error-message-content">{data.error}</p>
       </div>
     );
   }
@@ -41,18 +41,18 @@ export default function Products() {
   // TODO: Renderizar lista de produtos usando ProductCard
   // Dica: não esqueça de adicionar uma key apropriada
   return (
-    <main aria-describedby="list-of-products" className="products-container">
-      <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100" aria-describedby="products-header-title">Nossos Produtos</h1>
+    <main aria-describedby="list-of-products" data-testid="products-list" className="products-container">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100" data-testid="products-list-title" aria-describedby="products-header-title">Nossos Produtos</h1>
 
       {/* TODO: Implementar renderização da lista aqui */}
       {hasProducts && (
-        <article aria-describedby="grid-of-products" className="products-grid">
+        <article aria-describedby="grid-of-products" data-testid="products-grid" className="products-grid">
           {data.products.map((product) => (
             <ProductCard {...product} key={product.id} />
           ))}
         </article>
       )}
-      {!hasProducts && <p aria-describedby="empty-products" className="text-xl text-red-400">Nenhum produto disponível</p>}
+      {!hasProducts && <p aria-describedby="empty-products" data-testid="empty-products" className="text-xl text-red-400">Nenhum produto disponível</p>}
     </main>
   );
 }
