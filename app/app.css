@@ -90,43 +90,52 @@ body {
 /* Página de Produtos */
 .products-container {
   /* TODO: Adicionar estilos do container de produtos */
+  @apply p-4 flex items-center justify-center flex-col gap-6;
 }
 
 .products-grid {
   /* TODO: Adicionar grid responsivo (use CSS Grid ou Flexbox) */
   /* Sugestão: 3 colunas em desktop, 2 em tablet, 1 em mobile */
+  @apply grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
 }
 
 /* Product Card */
 .product-card {
   /* TODO: Adicionar estilos do card de produto */
   /* Pense em: border, padding, shadow, border-radius, hover effects */
+  @apply border flex gap-4 border-gray-300 hover:bg-gray-950 bg-gray-900 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200;
 }
 
 .product-name {
   /* TODO: Adicionar estilos do nome do produto */
+  @apply font-semibold text-xl text-gray-800 dark:text-gray-200;
 }
 
 .product-price {
   /* TODO: Adicionar estilos do preço (destaque) */
+  @apply font-bold text-2xl text-blue-600 dark:text-blue-400;
 }
 
 .product-description {
   /* TODO: Adicionar estilos da descrição */
+  @apply text-sm text-gray-600 dark:text-gray-400 max-w-48 text-end;
 }
 
 .product-category {
   /* TODO: Adicionar estilos da categoria (badge/tag style) */
+  @apply font-medium bg-zinc-400 px-2 py-0.5 text-zinc-800 rounded-full text-sm w-fit;
 }
 
 .product-stock {
   /* TODO: Adicionar estilos do status de estoque */
   /* Considere diferentes estilos para em estoque vs fora de estoque */
+  @apply font-medium bg-green-500 px-2 py-0.5 text-white rounded-full text-sm;
 }
 
 .add-to-cart-button {
   /* TODO: Adicionar estilos do botão */
   /* Pense em estados: normal, hover, active, disabled */
+  @apply cursor-pointer bg-blue-600 text-white px-2 py-1 rounded-full hover:bg-blue-700 active:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200;
 }
 
 /* Mensagens de erro */

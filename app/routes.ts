@@ -1,3 +1,6 @@
-import { type RouteConfig, index } from "@react-router/dev/routes";
+import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
-export default [index("routes/home.tsx")] satisfies RouteConfig;
+// TODO: Adicionar a rota /products aqui no arquivo pois não está sendo adicionado automaticamente (usando flatRoutes())
+export default [index("routes/home.tsx"),
+  route("products", "routes/products.tsx")
+] satisfies RouteConfig;

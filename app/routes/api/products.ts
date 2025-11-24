@@ -16,10 +16,10 @@ import { fetchProducts } from '~/services/api'
 
 export async function loader({ request }: LoaderFunctionArgs) {
   try {
-    const response = await fetchProducts();
+    const products = await fetchProducts();
 
     return {
-      products: response
+      products,
     }
     
   } catch (error) {
