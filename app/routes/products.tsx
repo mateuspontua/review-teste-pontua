@@ -42,7 +42,7 @@ export default function Products() {
   // Dica: não esqueça de adicionar uma key apropriada
   return (
     <main aria-describedby="list-of-products" className="products-container">
-      <h1 className="text-lg" aria-describedby="products-header-title">Nossos Produtos</h1>
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100" aria-describedby="products-header-title">Nossos Produtos</h1>
 
       {/* TODO: Implementar renderização da lista aqui */}
       {hasProducts && (

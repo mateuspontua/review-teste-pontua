@@ -16,6 +16,7 @@
  */
 
 import type { Product } from "~/@types/Product";
+import { formatCurrencyToBRL } from "~/utils/formatCurrencyToBRL";
 
 // TODO: Definir interface de props
 type ProductCardProps = Product 
@@ -36,7 +37,7 @@ export default function ProductCard(props: ProductCardProps) {
       <div className="flex flex-col">
         <div className="space-y-1 flex-1">
           <h3 className="product-name" aria-describedby="product-name">{name}</h3>
-          <p className="product-price" aria-describedby="product-price">{price}</p>
+          <p className="product-price" aria-describedby="product-price">{formatCurrencyToBRL(price)}</p>
         </div>
         <span className="product-category" aria-describedby="category-of-product">{category}</span>
       </div>

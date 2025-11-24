@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="app-container">
           <header className="app-header">
             <nav className="nav-container">
-              <h1 className="app-title">Gerenciador de Produtos</h1>
+              <h1 className="app-title text-xl font-semibold">Gerenciador de Produtos</h1>
               <div className="nav-links">
                 <Link to="/" className="nav-link">Home</Link>
                 <Link to="/products" className="nav-link">Produtos</Link>

@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html,
@@ -32,59 +33,73 @@ body {
 /* Layout principal */
 .app-container {
   /* TODO: Adicionar estilos do container principal */
+  @apply min-h-screen w-full;
 }
 
 .app-header {
   /* TODO: Adicionar estilos do header */
+  @apply w-full sticky top-0 bg-gray-800 border-b border-b-gray-700 py-4;
 }
 
 .nav-container {
   /* TODO: Adicionar estilos da navegação */
+  @apply flex items-center justify-between w-full container mx-auto;
 }
 
 .nav-links {
   /* TODO: Adicionar estilos dos links de navegação */
+  @apply flex gap-6;
 }
 
 .nav-link {
   /* TODO: Adicionar estilos individuais dos links */
+  @apply text-gray-400 hover:text-white font-medium transition-colors duration-200;
 }
 
 .main-content {
   /* TODO: Adicionar estilos do conteúdo principal */
+  @apply flex-1 min-h-dvh container mx-auto py-8 px-4;
 }
 
 .app-footer {
   /* TODO: Adicionar estilos do footer */
+  @apply w-full bg-gray-800 border-t border-t-gray-700 py-4 mt-8 text-center text-gray-400 text-sm;
 }
 
 /* Página Home */
 .home-container {
   /* TODO: Adicionar estilos do container da home */
+  @apply flex flex-col gap-12;
 }
 
 .hero-section {
   /* TODO: Adicionar estilos da seção hero */
+  @apply flex flex-col items-center text-center gap-4;
 }
 
 .hero-title {
   /* TODO: Adicionar estilos do título hero */
+  @apply text-4xl font-bold text-gray-900 dark:text-gray-100;
 }
 
 .hero-description {
   /* TODO: Adicionar estilos da descrição */
+  @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl;
 }
 
 .cta-button {
   /* TODO: Adicionar estilos do botão CTA */
+  @apply mt-4 bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 active:bg-blue-800 transition-colors duration-200;
 }
 
 .info-section {
   /* TODO: Adicionar estilos da seção de informações */
+  @apply grid gap-6 grid-cols-1 md:grid-cols-3;
 }
 
 .info-card {
   /* TODO: Adicionar estilos dos cards de informação */
+  @apply border border-gray-300 dark:border-gray-700 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200 bg-gray-50 dark:bg-gray-800;
 }
 
 /* Página de Produtos */
@@ -141,11 +156,12 @@ body {
 /* Mensagens de erro */
 .error-message {
   /* TODO: Adicionar estilos para mensagens de erro */
-  @apply flex flex-col items-center w-full justify-center py-10
+  @apply flex flex-col items-center w-full justify-center py-10;
 }
 
 .error-container {
   /* TODO: Adicionar estilos para container de erro */
+  @apply border border-red-600 bg-red-50 text-red-800 px-6 py-4 rounded-lg shadow-sm;
 }
 
 /* Responsividade */
